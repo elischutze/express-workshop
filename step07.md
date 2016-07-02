@@ -1,12 +1,12 @@
 # Step 7 - Sending your blog post to your server
 
-So far we have been requesting data from our server.  But we can also *send* data to the server to be stored somewhere.  
+So far we have been requesting data from our server.  But we can also *send* data to the server to be stored somewhere.
 
 ### HTTP request methods
 All requests use one of the HTTP methods. The main ones are: `GET, POST, PUT, DELETE`.
 
 
-`app.get` deals with requests that use the `GET` HTTP method.  
+`app.get` deals with requests that use the `GET` HTTP method.
 
 ### The `POST` http request method
 
@@ -36,7 +36,7 @@ Open up the `index.html` file in your text editor.  If you have a look, you shou
 </form>
 ```
 
-* This form has a text area and a Send button.  
+* This form has a text area and a Send button.
 * The `action` attribute is the endpoint form data will be sent to.
 * The `name` attribute will be used later to reference the data.
 
@@ -46,7 +46,7 @@ When you hit Send, the form will send a `POST` request to the server, using what
 
 * Data doesn't come through the server in one go; it flows to the server in a **stream**.  Think of a stream as water flowing from a tap into a bucket.  Your job is to collect this water in the server.
 
-* If we were writing a pure Node server, we would have to think about how to collect the stream of data properly.  But luckily for us, Express handles all of that stuff under the hood.  
+* If we were writing a pure Node server, we would have to think about how to collect the stream of data properly.  But luckily for us, Express handles all of that stuff under the hood.
 
 * All you need to do is define a route to deal with requests that come through on the `/create-post` endpoint.
 
@@ -77,6 +77,11 @@ This time though, `body-parser` is not built-in, we need to explicitly install i
 ```bash
 npm install body-parser --save
 ```
+We need to require `body-parser` on our page so add this to the top of `server.js` after your first `require`:
+
+```js
+var bodyParser = require('body-parser');
+```
 
 Now add this towards the top of your server, after your `require`s and before your `/create-post` endpoint:
 ```js
@@ -94,7 +99,7 @@ You should now see an object in the console.  The key should be `blogpost`, just
 
 So you may have noticed that when you hit Send on the form, the browser sort of hangs.  It's because it's trying to navigate to the `/create-post` page.  Of course, there is no such page.
 
-There's an easy fix for this.  In the response, you need to let the browser know that after it's finished with receiving the blogpost, you want it to reload the same page, and not try to go to fake page '/create-post'.  
+There's an easy fix for this.  In the response, you need to let the browser know that after it's finished with receiving the blogpost, you want it to reload the same page, and not try to go to fake page '/create-post'.
 
 At the end of your `/create-post` handler, add this line of code:
 
