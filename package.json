@@ -1,0 +1,19 @@
+{
+  "name": "express-workshop",
+  "version": "1.0.0",
+  "description": "<img src=\"https://github.com/node-girls/workshop-cms/blob/master/readme-images/logo.png?raw=true\">",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elischutze/express-workshop.git"
+  },
+  "author": "elischutze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elischutze/express-workshop/issues"
+  },
+  "homepage": "https://github.com/elischutze/express-workshop#readme"
+}
