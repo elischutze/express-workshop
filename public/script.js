@@ -14,11 +14,13 @@ $(document).ready(function() {
 
                 thumbnail.src = "./img/logo2.png";
                 thumbnail.className = "thumbnail";
+                // NEW THINGS
                 postLink.setAttribute(
                     "href", '/posts/'+blogPost
                 );
                 postTitle.innerHTML = data[blogPost].blogTitle;
                 postText.innerHTML = data[blogPost].blogpost ;
+                ////
                 postDiv.className = "post";
 
                 postDiv.appendChild(thumbnail);

@@ -1,27 +1,25 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+
+//NEW THINGS
 var mustacheExpress = require('mustache-express');
+///
 
-
-
-
-// To initialise our server, we just need to call the express() function. This will create an Express application for us to work with.
 var app = express()
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.get("/",function(req,res){
-//     res.send("THIS IS A MESSAGE HAAAY");
-
-// });
-
 app.use(express.static("public"));
 
+// NEW THINGS
 // Register '.mustache' extension with The Mustache Express
 app.engine('mustache', mustacheExpress());
-
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
+/////
+
+
+
 
 app.post("/create-post",function(req,res){
     res.redirect('/');
@@ -34,18 +32,16 @@ app.post("/create-post",function(req,res){
         var JSONText = JSON.stringify(parsedFile);
         fs.writeFile(myFile,JSONText,function(error){
             // console.log("imhere");
-
-
         })
-
     });
-
 });
 
 app.get('/get-posts', function(req,res){
     res.sendFile(__dirname+'/data/posts.json');
 });
 
+
+//NEW THINGS
 app.get('/posts/:postId', function(req,res){
     // var blogpost;
     fs.readFile(__dirname+'/data/posts.json',function(error,file){
@@ -57,8 +53,11 @@ app.get('/posts/:postId', function(req,res){
         res.render('post',{ title: title, body: blogpost.blogpost});
     });
 
-
+////
 });
+
+
+
 
 app.listen(3000, function(){
     console.log("Server is listening on Port 3000! Ready to accept requests.." );
