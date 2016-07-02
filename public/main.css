@@ -3,9 +3,9 @@
 ********************/
 
 body, html, div, label, p, h1, h2, h3, h4, h5, h6, form, a, input, textarea {
-	margin: 0; 
-	padding: 0; 
-	border: 0; 
+	margin: 0;
+	padding: 0;
+	border: 0;
 	outline: none;
 }
 
@@ -53,7 +53,7 @@ main {
 header {
 	background: #FF0040;
 	background: -webkit-linear-gradient(#F5A9BC, #FF0040);
-	background: -o-linear-gradient(#F5A9BC, #FF0040); 
+	background: -o-linear-gradient(#F5A9BC, #FF0040);
 	background: -moz-linear-gradient(#F5A9BC, #FF0040);
 	background: linear-gradient(#F5A9BC, #FF0040);
 }
@@ -85,7 +85,7 @@ label {
 	width: 80%;
 }
 
-textarea {
+textarea, input {
 	width: 96%;
 	border-radius: 3px;
 	border: 1px solid #848484;
@@ -116,12 +116,17 @@ hr {
 	background: #BDBDBD;
 }
 
+h3 {
+    display: inline-block;
+}
+
 .thumbnail {
 	float: left;
 	width: 50px;
 	height: auto;
 	margin-left: 3px;
 	margin-top: 3px;
+    display: block;
 }
 
 .post {
@@ -140,8 +145,35 @@ hr {
 	margin: 5px 10px;
 }
 
+.post a:hover, .post h3:hover {
+    color: #A5DF00;
+}
+
 @media (min-width: 600px) {
 	 .post {
 		width: 28.9%;
 	}
+}
+/*******************
+*  Single Posts
+********************/
+.single-post h1 {
+    text-align: center;
+}
+
+.single-post p {
+    padding: 10px;
+    font-weight: lighter;
+    text-align: justify;
+
+}
+
+.single-post a {
+    display: block;
+    padding: 15px;
+    color: #A5DF00;
+    font-weight: bold;
+    text-decoration: underline;
+
+
 }

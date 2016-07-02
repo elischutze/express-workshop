@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog Post</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
+        <link href="../main.css" rel="stylesheet">
+        <script>
+
+        window.onload = function(e){
+            var post = document.getElementById("blog").innerHTML;
+            console.log(post.substr(0,10));
+           post = post.split("\"").join("").split("\n").join("<br/>");
+           document.getElementById("blog").innerHTML = post;
+        console.log("script");
+    };
+
+        </script>
+    </head>
+  </head>
+  <body  class="single-post">
+  <header>
+            <img class="main-logo" src="../img/logo1.png">
+            <h1 class="title">Node Girls</h1>
+        </header>
+
+        <a href="../"><- BACK</a>
+  <div>
+
+
+    <h1>{{title}}</h1>
+    <div >
+    <p id="blog">
+      {{ body }}
+      </p>
+    </div>
+    </div>
+  </body>
+</html>
